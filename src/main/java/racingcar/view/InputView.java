@@ -10,8 +10,8 @@ public class InputView {
     }
 
     //게임 시도 횟수 입력
-    public Integer inputTryCount(){
+    public String inputTryCount(){
         System.out.println("시도할 횟수는 몇 회인가요?");
-        return Integer.valueOf(Console.readLine());
+        return Console.readLine();
     }
 }
