@@ -19,6 +19,15 @@ public class RacingService {
         this.repository=repository;
     }
 
+    // 테스트용 생성자 추가
+    public RacingService(String inputCarsNames, RandomMoveStrategy moveStrategy,
+                         RacingCarRepository repository) {
+        List<String> names = CarNameParser.parser(inputCarsNames);
+        this.cars = new Cars(names);
+        this.moveStrategy = moveStrategy;
+        this.repository = repository;
+    }
+
     //시도 횟수 동안 경수를 실행하며 라운드별 자동차들의 상태 저장
     public void playRace(int count){
         for(int round=1;round<=count;round++){
